@@ -34,8 +34,8 @@ def main():
 
     command = input('command ? > ')
     if command == 'record':
-        name = input('名前は？ > ')
-        weight = input('体重は？ > ')
+        name = input('あなたの名前は？ > ')
+        weight = input('あなたの体重は？ > ')
         record_user_info(name, weight)
 
     elif command == 'display':
