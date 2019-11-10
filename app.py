@@ -1,7 +1,8 @@
 import sqlite3
+import sys
 
 
-def register_user(name, weight):
+def record_user_info(name, weight):
     connection = sqlite3.connect('camp.db')
     cursor = connection.cursor()
     sql = f"insert into users (name, weight) VALUES (?, ?)"
@@ -24,25 +25,26 @@ def display_user_weight():
     return user_info
 
 
-def 終了する関数実行():
-    return
+def exit_exe():
+    print('Bye.')
+    sys.exit()  # 処理は終了できるがこれでいいのか？
 
 
 def main():
 
-    command = input('command? > ')
-    if command == 'register':
+    command = input('command ? > ')
+    if command == 'record':
         name = input('名前は？ > ')
         weight = input('体重は？ > ')
-        register_user(name, weight)
+        record_user_info(name, weight)
 
     elif command == 'display':
         user_info = display_user_weight()
         for user in user_info:
             print(f'名前:{user[0]}, 体重:{user[1]}kg')
 
-    # elif command == 'q':
-    #     終了する関数実行()
+    elif command == 'q':
+         exit_exe()
 
 
 
