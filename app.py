@@ -38,7 +38,8 @@ def main():
 
     elif command == 'display':
         user_info = display_user_weight()
-        print(user_info)
+        for user in user_info:
+            print(f'名前:{user[0]}, 体重:{user[1]}kg')
 
     # elif command == 'q':
     #     終了する関数実行()
